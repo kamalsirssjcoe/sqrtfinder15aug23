@@ -1,0 +1,50 @@
+<html>
+<head>
+	<title> Square Root Finder App by Kamal Sir </title>
+	<style>
+		* { font-size:50px; font-family:Impact; }
+		body { background-color:lightyellow; }
+	</style>
+	<script>
+		function check()
+		{
+			event.preventDefault();
+			let num = document.getElementById("num");
+			let ans = document.getElementById("ans");
+			
+			if (num.value == "")
+			{
+				alert("u did not enter number");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+			let n = parseFloat(num.value);
+			if (n < 0)
+			{
+				alert("-ve number not allowed");
+				ans.innerHTML = "";
+				num.focus();
+				return;
+			}
+			let r = n ** 0.5;
+			ans.innerHTML = "square root = " + r.toFixed(2);
+		}
+	</script>
+</head>
+
+<body>
+<center>
+	<h1> Square Root Finder </h1>
+	<form onsubmit="check()">
+	<input type="number" step="any" id="num" placeholder="enter number"></input>
+	<br><br>
+	<input type="submit" value="Find Square Root "></input>
+	</form>
+	<h1 id="ans"></h1>
+</center>
+</body>
+
+</html>
+
+
